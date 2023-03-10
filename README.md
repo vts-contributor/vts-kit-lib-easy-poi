@@ -49,8 +49,8 @@ Cách tích hợp
 ```xml
 
 <dependency>
-    <groupId>com.viettel.vts-kit</groupId>
-    <artifactId>vts-kit-lib-easy-poi</artifactId>
+    <groupId>com.atviettelsolutions</groupId>
+    <artifactId>viewpoi</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
