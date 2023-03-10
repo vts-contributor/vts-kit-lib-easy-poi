@@ -165,7 +165,7 @@ public class CourseEntity implements java.io.Serializable {
 	@RequestMapping(value = "/exportXls")
 	public ModelAndView exportXls(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView(new JeecgEntityExcelView());
-		List<JeecgDemo> pageList = jeecgDemoService.list();
+		List<EasyDemo> pageList = easyDemoService.list();
 		mv.addObject(NormalExcelConstants.FILE_NAME,"my_export_data");
 		mv.addObject(NormalExcelConstants.CLASS,Student.class);
 		mv.addObject(NormalExcelConstants.PARAMS,new ExportParams("my_title", "my_sheet_name"));
@@ -176,7 +176,7 @@ public class CourseEntity implements java.io.Serializable {
 
 | Các loại view          | Chức năng   | Mô tả                          |
 |------------------------|-------------|--------------------------------|
-| JeecgMapExcelView      | Dạng xem xuất đối tượng thực thể    | Ví dụ: List<JeecgDemo>         |
+| JeecgMapExcelView      | Dạng xem xuất đối tượng thực thể    | Ví dụ: List<EasyDemo>         |
 | JeecgEntityExcelView   | Dạng xem xuất đối tượng Map   | List<Map<String, String>> list |
 | JeecgTemplateExcelView | Chế độ xem xuất mẫu Excel | -                              | 
 | JeecgTemplateWordView  | Chế độ xem xuất mẫu Word  | -                              |
@@ -342,7 +342,7 @@ One-to-many export entity annotation source code
 ```Java
 
 @Data
-public class JeecgOrderMainPage {
+public class EasyDemoOrderMainPage {
 
     /**primaryKey*/
     private java.lang.String id;
@@ -369,8 +369,8 @@ public class JeecgOrderMainPage {
     private java.util.Date updateTime;
 
     @ExcelCollection(name = "Client")
-    private List<JeecgOrderCustomer> jeecgOrderCustomerList;
+    private List<EasyDemoOrderCustomer> easyDemoOrderCustomerList;
     @ExcelCollection(name = "Ticket")
-    private List<JeecgOrderTicket> jeecgOrderTicketList;
+    private List<EasyDemoOrderTicket> easyDemoOrderTicketList;
 }
 ```
